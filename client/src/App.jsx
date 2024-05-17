@@ -9,6 +9,7 @@ import Reducer from "./Pages/Reducer"
 import { Appcontext } from "./Pages/context"
 import First from "./Pages/First"
 import Second from "./Pages/Second"
+import Reduxfirst from "./Pages/Reduxfirst"
 function App() {
 
   const person={
@@ -32,6 +33,7 @@ createRoutesFromElements(
   <Route path="*" element={<Notfoundpage/>}/>
   <Route path="first" element={<First/>}/>
   <Route path="second" element={<Second/>}/>
+  <Route path="rfirst" element={<Reduxfirst/>}/>
   </>
 
 )

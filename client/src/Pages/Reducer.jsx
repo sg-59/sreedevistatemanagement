@@ -1,4 +1,5 @@
 import React, { useReducer, useState } from 'react'
+import { useSelector } from 'react-redux';
 
 const Reducer = () => {
 
@@ -8,6 +9,9 @@ const Reducer = () => {
         Bgcolor:"blue"
 
     }
+
+    const Reduxdata=useSelector((state)=>state.info.user[0])
+    console.log("reduxdata in **************",Reduxdata);
 
     
 
@@ -39,6 +43,10 @@ const Reducer = () => {
     <button style={{backgroundColor:state.Bgcolor}} onClick={()=>dispatch({type:"increment"})}>Increment</button>
     <button style={{backgroundColor:state.Bgcolor}} onClick={()=>dispatch({type:"decrement"})}>De-crement</button>
     <button onClick={()=>dispatch({type:"reset"})}>Re-set</button>
+
+    {Reduxdata&&Reduxdata.map((li)=>(
+        <h1>{li.name}</h1>
+    ))}
     </div>
   )
 }

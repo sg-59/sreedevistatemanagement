@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
 import axios from 'axios'
 import { Usercontext } from './Statemanagement'
+import { useDispatch } from 'react-redux'
 
 const First = () => {
+ 
 
     const {dispatch}=useContext(Usercontext)
 
@@ -11,6 +13,7 @@ const First = () => {
         try{
 const apidata=await axios.get('https://jsonplaceholder.typicode.com/users')
 dispatch({ok:"success",datas:apidata.data})
+
 console.log(apidata.data);
         }catch(err){
             console.log(err);
